@@ -1,0 +1,5 @@
+<fmt:message key="news.addNews" var="addNews"/>
+<fmt:message key="news.title" var="newsTitle"/>
+<fmt:message key="news.date" var="newsDate"/>
+<fmt:message key="news.brief" var="newsBrief"/>
+<fmt:message key="news.content" var="newsContent"/>

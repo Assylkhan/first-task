@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+    <form-beans>
+        <form-bean name="newsForm"
+                   type="com.epam.testapp.presentation.form.NewsForm"/>
+    </form-beans>
+
+    <global-forwards type="org.apache.struts.action.ActionForward">
+        <forward name="newsList" path="/news.do?parameter=list" redirect="true"/>
+    </global-forwards>
+
+    <action-mappings>
+        <action path="/changeLocale" type="org.springframework.web.struts.DelegatingActionProxy">
+        </action>
+        <action path="/newsForm" forward="/WEB-INF/views/newsForm.jsp"/>
+        <!--<action path="/editNews" forward="/newsForm.do"/>
+        <action path="/addNews" forward="/newsForm.do"/>-->
+        <action path="/news" name="newsForm"
+                parameter="parameter"
+                type="org.springframework.web.struts.DelegatingActionProxy"
+                input="/WEB-INF/views/newsForm.jsp">
+            <forward name="news" path="/WEB-INF/views/news.jsp"/>
+            <forward name="newsForm" path="/WEB-INF/views/newsForm.jsp"/>
+            <forward name="list" path="/WEB-INF/views/newsList.jsp"/>
+        </action>
+    </action-mappings>
+
+    <message-resources parameter="i18n.messages"/>
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+                property="pathnames"
+                value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+
+    <!-- Spring Struts plugin -->
+    <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+        <set-property property="contextConfigLocation"
+                      value="/WEB-INF/applicationContext.xml"/>
+    </plug-in>
+
+</struts-config>

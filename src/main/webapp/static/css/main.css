@@ -1,0 +1,27 @@
+* {
+    border-radius: 0% !important;
+}
+
+p, p * {
+    font-size: 12px;
+}
+
+.horizontal-center {
+    margin: auto;
+    float: none;
+}
+
+header {
+    border: 1px solid;
+    margin-bottom: 15px;
+    padding: 15px 10px 0px;
+}
+
+.action-group > * {
+    float: left;
+    margin-right: 6px;
+}
+
+.glyphicon-cog {
+    margin-right: 15px;
+}

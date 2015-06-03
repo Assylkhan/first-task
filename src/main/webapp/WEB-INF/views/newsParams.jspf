@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="row">
+        <html:errors/>
+    </div>
+    <div class="row">
+        <div class="col-md-2">${newsTitle}</div>
+        <div class="col-md-8">
+            <html:text name="newsForm" value="${news.title}" styleClass="form-control" property="title" maxlength="100"/>
+            <html:errors property="title"/>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-2">${newsDate}</div>
+        <div class="col-md-8">
+            <fmt:formatDate value="${news.date}" pattern="dd.MM.yyyy" var="date"/>
+            <html:text name="newsForm" value="${date}" styleClass="form-control" property="date" maxlength="10"/>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-2">${newsBrief}</div>
+        <div class="col-md-8">
+            <html:textarea name="newsForm" value="${news.brief}" styleClass="form-control" property="brief"></html:textarea>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-2">${newsContent}</div>
+        <div class="col-md-8">
+            <html:textarea name="newsForm" value="${news.content}" styleClass="form-control" property="content"></html:textarea>
+        </div>
+    </div>
+</div>
