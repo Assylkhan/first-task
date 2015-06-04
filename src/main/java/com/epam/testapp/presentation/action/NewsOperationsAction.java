@@ -13,9 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
-public class NewsAction extends DispatchAction {
+public class NewsOperationsAction extends DispatchAction {
     static final String NEWS_LIST = "newsList";
-    static final String NEWS_FORM = "newsForm";
     private NewsDao newsDao;
 
     public NewsDao getNewsDao() {
@@ -24,38 +23,6 @@ public class NewsAction extends DispatchAction {
 
     public void setNewsDao(NewsDao newsDao) {
         this.newsDao = newsDao;
-    }
-
-    public ActionForward list(ActionMapping mapping, ActionForm form,
-                              HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
-        final String LIST = "list";
-        List<News> newsList = newsDao.getList();
-        request.setAttribute("newsList", newsList);
-        return mapping.findForward(LIST);
-    }
-
-    public ActionForward view(ActionMapping mapping, ActionForm form,
-                              HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
-        News news = newsDao.fetchById(Long.valueOf(request.getParameter("id")));
-        request.setAttribute("news", news);
-        return mapping.findForward("news");
-    }
-
-    public ActionForward add(ActionMapping mapping, ActionForm form,
-                             HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
-        return mapping.findForward(NEWS_FORM);
-    }
-
-    public ActionForward edit(ActionMapping mapping, ActionForm form,
-                              HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
-        NewsForm newsForm = (NewsForm) form;
-        News news = newsDao.fetchById(Long.valueOf(request.getParameter("id")));
-        request.setAttribute("news", news);
-        return mapping.findForward(NEWS_FORM);
     }
 
     public ActionForward save(ActionMapping mapping, ActionForm form,

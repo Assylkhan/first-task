@@ -8,7 +8,7 @@
 <t:genericPage title="${addNews}">
     <%--method="post"--%>
     <div class="jumbotron" style="border: solid 2px #eaeaea; background:#fff;">
-        <html:form action="/news.do?parameter=save${param.parameter == 'edit' ? '&id='+=news.id : ''}">
+        <html:form action="/newsOperations.do?parameter=save${param.parameter == 'edit' ? '&id='+=news.id : ''}">
             <%@include file="newsParams.jspf" %>
             <br/>
             <div class="row">
@@ -16,7 +16,7 @@
                     <html:submit styleClass="btn btn-default horizontal-center">
                         <fmt:message key="news.save"/>
                     </html:submit>
-                    <a href="/news.do?parameter=list" class="btn btn-default horizontal-center">
+                    <a href="/newsPages.do?parameter=list" class="btn btn-default horizontal-center">
                         <fmt:message key="news.cancel"/>
                     </a>
                 </div>

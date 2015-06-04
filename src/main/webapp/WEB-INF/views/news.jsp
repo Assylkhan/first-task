@@ -38,10 +38,10 @@
             <br/>
             <div class="row" >
                 <div class="form-group" align=center>
-                    <a href="/news.do?parameter=edit&id=${news.id}" class="btn btn-default horizontal-center">
+                    <a href="/newsPages.do?parameter=edit&id=${news.id}" class="btn btn-default horizontal-center">
                         <fmt:message key="news.edit"/>
                     </a>
-                    <a href="/news.do?parameter=delete&id=${news.id}" class="btn btn-default horizontal-center">
+                    <a href="/newsOperations.do?parameter=delete&id=${news.id}" class="btn btn-default horizontal-center">
                         <fmt:message key="news.delete"/>
                     </a>
                 </div>

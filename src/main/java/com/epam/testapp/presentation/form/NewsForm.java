@@ -1,6 +1,11 @@
 package com.epam.testapp.presentation.form;
 
+import org.apache.struts.action.ActionErrors;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
 import org.apache.struts.validator.ValidatorForm;
+
+import javax.servlet.http.HttpServletRequest;
 
 public class NewsForm extends ValidatorForm {
     private String id;
@@ -49,7 +54,7 @@ public class NewsForm extends ValidatorForm {
         this.date = date;
     }
 
- /*   @Override
+    /*@Override
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
         if (this.title == null || title.trim().equals(""))

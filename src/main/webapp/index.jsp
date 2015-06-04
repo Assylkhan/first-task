@@ -16,6 +16,6 @@
     <title>index</title>
 </head>
 <body>
-    <c:redirect url="/news.do?parameter=list"/>
+    <c:redirect url="/newsPages.do?parameter=list"/>
 </body>
 </html>

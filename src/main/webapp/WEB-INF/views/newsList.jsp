@@ -23,10 +23,10 @@
                 <p>
 
                 <div class="pull-right action-group">
-                    <html:link href="/news.do?parameter=view&id=${news.id}">
+                    <html:link href="/newsPages.do?parameter=view&id=${news.id}">
                         <fmt:message key="news.view"/>
                     </html:link>
-                    <html:link href="/news.do?parameter=edit&id=${news.id}">
+                    <html:link href="/newsPages.do?parameter=edit&id=${news.id}">
                         <fmt:message key="news.edit"/>
                     </html:link>
                     <input type="checkbox" class="checkbox" id="${news.id}">
@@ -71,7 +71,7 @@
                 <button id="delete" class="btn btn-default" onclick="deleteNews();">
                     <fmt:message key="news.delete"/>
                 </button>
-                <form action="/news.do?parameter=delete" method="post" id="deleteForm">
+                <form action="/newsOperations.do?parameter=delete" method="post" id="deleteForm">
                     <input type="hidden" name="newsIdList" id="newsIdList"/>
                 </form>
             </div>

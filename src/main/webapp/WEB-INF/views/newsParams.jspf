@@ -6,7 +6,7 @@
         <div class="col-md-2">${newsTitle}</div>
         <div class="col-md-8">
             <html:text name="newsForm" value="${news.title}" styleClass="form-control" property="title" maxlength="100"/>
-            <html:errors property="title"/>
+            <%--<html:errors property="title"/>--%>
         </div>
     </div>
     <br/>

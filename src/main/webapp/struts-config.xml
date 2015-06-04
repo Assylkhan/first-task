@@ -11,18 +11,26 @@
     </form-beans>
 
     <global-forwards type="org.apache.struts.action.ActionForward">
-        <forward name="newsList" path="/news.do?parameter=list" redirect="true"/>
+        <forward name="newsList" path="/newsPages.do?parameter=list" redirect="true"/>
     </global-forwards>
 
     <action-mappings>
         <action path="/changeLocale" type="org.springframework.web.struts.DelegatingActionProxy">
         </action>
-        <action path="/newsForm" forward="/WEB-INF/views/newsForm.jsp"/>
+        <!--<action path="/newsForm" forward="/WEB-INF/views/newsForm.jsp"/>-->
         <!--<action path="/editNews" forward="/newsForm.do"/>
         <action path="/addNews" forward="/newsForm.do"/>-->
-        <action path="/news" name="newsForm"
+        <action path="/newsOperations"
+                name="newsForm"
                 parameter="parameter"
                 type="org.springframework.web.struts.DelegatingActionProxy"
+                input="/WEB-INF/views/newsForm.jsp">
+        </action>
+        <action path="/newsPages"
+                name="newsForm"
+                parameter="parameter"
+                type="org.springframework.web.struts.DelegatingActionProxy"
+                validate="false"
                 input="/WEB-INF/views/newsForm.jsp">
             <forward name="news" path="/WEB-INF/views/news.jsp"/>
             <forward name="newsForm" path="/WEB-INF/views/newsForm.jsp"/>

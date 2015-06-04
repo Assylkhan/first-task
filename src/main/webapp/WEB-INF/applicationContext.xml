@@ -21,8 +21,15 @@
           class="com.epam.testapp.presentation.action.ChangeLocaleAction">
     </bean>
 
-    <bean name="/news"
-          class="com.epam.testapp.presentation.action.NewsAction">
+    <bean name="/newsOperations"
+          class="com.epam.testapp.presentation.action.NewsOperationsAction">
+        <property name="newsDao">
+            <ref bean="newsDao"/>
+        </property>
+    </bean>
+
+    <bean name="/newsPages"
+          class="com.epam.testapp.presentation.action.NewsPagesAction">
         <property name="newsDao">
             <ref bean="newsDao"/>
         </property>

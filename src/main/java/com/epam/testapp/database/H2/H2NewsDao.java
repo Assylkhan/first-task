@@ -22,21 +22,21 @@ public class H2NewsDao extends JdbcDaoSupport implements NewsDao {
         super();
         setDataSource(dataSource);
     }*/
-    @Autowired
+//    @Autowired
     @Override
     public News fetchById(Long id) throws DaoException {
         final String SQL = "SELECT * FROM NEWS WHERE ID=?";
         return getJdbcTemplate().queryForObject(SQL, new Object[]{id}, new NewsMapper());
     }
 
-    @Autowired
+//    @Autowired
     @Override
     public List<News> getList() throws DaoException {
         final String SQL = "SELECT * FROM NEWS";
         return getJdbcTemplate().query(SQL, new NewsMapper());
     }
 
-    @Autowired
+//    @Autowired
     @Override
     public News save(News news) throws DaoException {
         final String SQL = "INSERT INTO NEWS (TITLE, DATE, BRIEF, CONTENT) VALUES (?, ?, ?, ?)";
@@ -44,7 +44,7 @@ public class H2NewsDao extends JdbcDaoSupport implements NewsDao {
         return news;
     }
 
-    @Autowired
+//    @Autowired
     @Override
     public void update(News news) throws DaoException {
         final String SQL = "UPDATE NEWS SET TITLE=?, DATE=?, BRIEF=?, CONTENT=? WHERE ID=?";
@@ -62,7 +62,7 @@ public class H2NewsDao extends JdbcDaoSupport implements NewsDao {
 //        news.getTitle(), news.getDate(), news.getBrief(), news.getContent(), news.getId()
     }
 
-    @Autowired
+//    @Autowired
     @Override
     public void removeById(Long id) throws DaoException {
         final String SQL = "DELETE FROM NEWS WHERE ID=?";

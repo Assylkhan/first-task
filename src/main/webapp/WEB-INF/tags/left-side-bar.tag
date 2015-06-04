@@ -10,13 +10,13 @@
         <div class="well" style="background: #fff">
             <p>
                 <span class="glyphicon glyphicon-cog"></span>
-                <a href="<c:url value='/news.do?parameter=list'/> ">
+                <a href="<c:url value='/newsPages.do?parameter=list'/> ">
                     <fmt:message key="news.newsList"/>
                 </a>
             </p>
             <p>
                 <span class="glyphicon glyphicon-cog"></span>
-                <a href="<c:url value='/news.do?parameter=add'/> ">
+                <a href="<c:url value='/newsPages.do?parameter=add'/> ">
                     <fmt:message key="news.addNews"/>
                 </a>
             </p>
