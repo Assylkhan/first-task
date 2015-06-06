@@ -25,9 +25,11 @@
                 parameter="parameter"
                 type="org.springframework.web.struts.DelegatingActionProxy"
                 input="/WEB-INF/views/newsForm.jsp">
+            <forward name="failure" path="/WEB-INF/views/newsForm.jsp"/>
         </action>
         <action path="/newsPages"
                 name="newsForm"
+                scope="session"
                 parameter="parameter"
                 type="org.springframework.web.struts.DelegatingActionProxy"
                 validate="false"
